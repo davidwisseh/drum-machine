@@ -8,13 +8,13 @@ const DrumPad = ({ letter, index, src, name }) => {
   const dispatch = useDispatch();
   const volume = useSelector((state) => state.volume);
   let isOn = useSelector((state) => state.on);
-  const playSound = (on) => {
+  const playSound = () => {
     $("#button" + index).addClass("active");
     setTimeout(() => {
       $("#button" + index).removeClass("active");
     }, 100);
 
-    if (on) {
+    if (isOn) {
       dispatch({ type: "DISPLAY", payload: name });
       const audio = document.getElementById(letter);
       audio.volume = volume;
@@ -24,24 +24,19 @@ const DrumPad = ({ letter, index, src, name }) => {
     }
   };
 
-  useEffect(() => {
-    return () => {
-      $(document).on("keydown", (e) => {
-        if (e.key.toUpperCase() === letter) {
-          $("#button" + index).trigger("click");
-        }
-      });
-    };
-  }, []);
+  window.addEventListener("keydown", (e) => {
+    if (e.key.toUpperCase() === letter) {
+      console.log("key pressed");
+      $("#button" + index).trigger("click");
+    }
+  });
 
   return (
     <button
       id={"button" + index}
       type="button"
       className="btn drum-pad"
-      onClick={() => {
-        playSound(isOn);
-      }}
+      onClick={playSound}
     >
       {letter}
       <audio
