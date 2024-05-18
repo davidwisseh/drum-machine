@@ -1,0 +1,67 @@
+#drum-pad-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: fit-content;
+  margin: 40px auto 10px auto;
+}
+.main {
+  align-items: center;
+  width: 350px;
+  margin: auto;
+  height: 602px;
+  background: linear-gradient(orange, beige);
+}
+#display {
+  display: flex;
+  width: 150px;
+  height: 70px;
+  background-color: aliceblue;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+#power {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.bi-power {
+  font-size: 30px;
+  color: greenyellow;
+}
+
+#power:hover {
+  cursor: pointer;
+  box-shadow: 0 0 7px 0 gold;
+}
+#volume:hover {
+  cursor: pointer;
+}
+#swap {
+  margin: auto 10px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  font-size: 40px;
+}
+#swap:hover {
+  cursor: pointer;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.img-container {
+  background-image: url("../phone.png");
+  height: 800px;
+  width: 780px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}

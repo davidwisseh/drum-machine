@@ -1,0 +1,17 @@
+.drum-pad {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.drum-pad:hover {
+  cursor: pointer;
+}
+.drum-pad:active {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(4px);
+}
+.active {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(4px);
+}
